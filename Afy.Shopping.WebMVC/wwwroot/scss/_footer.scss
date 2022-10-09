@@ -1,0 +1,161 @@
+/*****************************
+    Footer
+*****************************/
+.footer {
+.footer-link {
+    display: flex;
+    ul {
+        padding-right: 50px;
+        &:last-child {
+            padding-right: 0px;
+        }
+        li {
+            a {
+                color: $gray-3;
+                padding: 12px 0px;
+                display: block;
+                font-size: 12px;
+                line-height: 12px;
+            }
+            &:hover {
+                a {
+                    color: $primary;
+                }
+            }
+            &:first-child {
+                a {
+                    padding-top: 0;
+                }
+            }
+            &:last-child {
+                a {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
+.footer-contact-info {
+      .contact-address{
+        .contact-item{
+        a{
+         color: $gray-3;
+        }
+       }
+     }
+   }
+   .footer-title{
+    margin-bottom: 30px;
+    color: $gray-7;
+   }
+
+   .social-icon{
+    a{
+        color: $gray-3;
+    }
+   }
+   .footer-bottom{
+    padding: 30px 0px;
+    background-color: #eaeaea;
+    border-top: 1px solid $border-color;
+   }
+
+}
+
+.footer.footer-dark{
+ .footer-link {
+ ul{
+    li{
+       a{
+         color: $gray-4;
+         &:hover{
+            color: $primary;
+         }
+       }
+      }
+   }
+ }
+ .contact-item{
+    p{
+        color: $gray-4;
+    }
+    a{
+        color: $gray-4 !important;
+        &:hover{
+            color: $primary !important;
+         }
+    }
+ }
+.social-icon{
+     a {
+         color: $gray-4;
+          &:hover{
+            color: $primary;
+         }
+     }
+    }
+
+ .copyright {
+     p{
+        color: $gray-4;
+        a{
+            color: $gray-4;
+          &:hover{
+           color: $primary;
+         }
+        }
+     }
+   }
+   p {
+    color: $gray-4;
+   }
+      .footer-bottom{
+            border-top: none;
+        }
+
+        .btn-primary:hover {
+        background-color: $white;
+        border-color: $white;
+        color: $primary;
+        }
+}
+
+
+
+
+/*************************
+       Responsive
+*************************/
+
+@media (max-width: 991px) {
+
+  .footer{
+    .footer-title{
+      margin-bottom: 30px;
+    }
+  }
+
+}
+
+
+@media (max-width: 575px) {
+
+.footer-link {
+    display: block;
+    ul {
+        li {
+            &:first-child {
+                a {
+                    padding-top: 7px;
+                }
+            }
+            &:last-child {
+                a {
+                    padding-bottom: 7px;
+                }
+            }
+        }
+    }
+}
+
+}

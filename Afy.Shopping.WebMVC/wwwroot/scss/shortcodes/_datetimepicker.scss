@@ -1,0 +1,40 @@
+/*****************************
+  Datetimepicker
+*****************************/
+
+.bootstrap-datetimepicker-widget {
+	table {
+		td.active {
+			background-color: $primary;
+			&:hover {
+				background-color: $primary;
+			}
+		}
+		td.day {
+			height: 30px;
+			line-height: 30px;
+			width: 40px;
+			font-size: 14px;
+		}
+		th {
+			font-size: 14px;
+		}
+		td {
+			span.active {
+				background: $primary;
+			}
+		}
+	}
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+	width: 19rem;
+}
+
+.input-group.date {
+	.input-group-text {
+		background-color: $gray-1;
+		border-color: $border-color;
+		height: 100%;
+	}
+}

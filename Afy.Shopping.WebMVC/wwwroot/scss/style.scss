@@ -1,0 +1,93 @@
+/*
+
+Template: Guruma - Online Course & Education HTML Template
+Version: 2.0.0
+Author: potenzaglobalsolutions
+Design and Developed by: potenzaglobalsolutions.com
+
+NOTE: This is main stylesheet of template, This file contains the styling for the actual Template.
+
+*/
+
+/*================================================
+[  Table of contents  ]
+================================================
+
+ :: Typography
+ :: Helper Classes
+ :: Shortcodes
+    - Button
+    - Accordion
+    - shuffle
+    - List
+    - Feature info
+    - Category
+    - Gallery
+    - Teachers
+    - Testimonial
+    - Countdown
+    - Tabs
+    - Owl carousel
+    - Course
+    - Progress Bar
+    - Pricing
+    - Event
+    - Range Slider
+    - Datetimepicker
+ :: Header
+   - Header Transparent 02
+   - Header Transparent 03
+ :: Banner
+   - Banner 01
+   - Banner 02
+   - Banner 03
+ :: Layout
+   - Section Title
+   - Client Logo
+ :: Blog
+   - Blog
+ :: Shop
+   - Shop
+ :: Not Found
+ :: Footer
+
+======================================
+[ End table content ]
+======================================*/
+
+// Core files
+@import "variables";
+@import "typography";
+@import "helpers";
+
+// Shortcodes
+@import "shortcodes/button";
+@import "shortcodes/accordion";
+@import "shortcodes/shuffle";
+@import "shortcodes/list";
+@import "shortcodes/feature-info";
+@import "shortcodes/category";
+@import "shortcodes/gallery";
+@import "shortcodes/teachers";
+@import "shortcodes/testimonial";
+@import "shortcodes/countdown";
+@import "shortcodes/tabs";
+@import "shortcodes/owl-carousel";
+@import "shortcodes/course";
+@import "shortcodes/progress-bar";
+@import "shortcodes/pricing";
+@import "shortcodes/event";
+@import "shortcodes/range-slider";
+@import "shortcodes/datetimepicker";
+
+// Structure
+ @import "header";
+ @import "banner";
+ @import "layout";
+
+// Pages
+@import "blog";
+@import "sidebar";
+@import "shop";
+@import "error";
+@import "footer";

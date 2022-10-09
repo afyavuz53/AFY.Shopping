@@ -17,6 +17,12 @@ namespace Afy.Shopping.BLL.Concrete
         {
             _service = productService ?? throw new ArgumentNullException(nameof(productService));
         }
+
+        public Task<Product?> Get(string id)
+        {
+            return _service.GetAsync(id);
+        }
+
         public Task<ICollection<Product>> GetAll(Expression<Func<Product, bool>> filter = null!)
         {
             if (filter == null)

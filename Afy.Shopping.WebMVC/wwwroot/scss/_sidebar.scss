@@ -1,0 +1,98 @@
+/*****************************
+  Sidebar
+*****************************/
+
+
+/* Sidebar */
+.widgets {
+    .widget {
+        margin-bottom: 50px;
+        box-shadow: $box-shadow;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    .widget-title {
+        background-color: $gray-1;
+        padding: 10px 20px;
+        margin-bottom: 0;
+    }
+    .widget-content {
+        padding: 30px 20px;
+        border-top:  1px solid $border-color;;
+    }
+}
+
+.widget-tag {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            margin: 0px 15px 15px 0px;
+            a {
+                display: inline-block;
+                padding: 8px 25px;
+                border: 1px solid $border-color;
+                border-radius: $border-radius;
+                &:hover {
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.widget-post {
+    ul {
+        padding-left: 0px;
+        margin-bottom: 0px;
+        li {
+            display: flex;
+            margin-bottom: 15px;
+            margin-left: 0;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            img {
+                width: 60px;
+                margin-right: 15px;
+                border-radius: $border-radius-sm;
+            }
+        }
+    }
+}
+
+
+.widget-course-info {
+    ul {
+        li {
+            display: flex;
+            color: $gray-7;
+            min-width: 120px;
+        }
+    }
+}
+
+.widget-post {
+    .widget-post-title {
+        a {
+            color: $gray-3;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+
+/*****************************
+  Responsive
+*****************************/
+@media (max-width:767px) {
+    .widgets {
+        .widget {
+            margin-bottom: 30px;
+        }
+    }
+
+}
+

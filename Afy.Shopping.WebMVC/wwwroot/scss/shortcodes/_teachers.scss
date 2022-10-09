@@ -1,0 +1,161 @@
+/*****************************
+  Teachers
+*****************************/
+
+  .teachers{
+     transition: all 0.5s ease-in-out;
+     position: relative;
+     cursor: pointer;
+    .content{
+      text-align: center;
+      padding: 20px;
+      margin: -30px 0px 0;
+      width: calc(100% - 30px);
+      box-shadow: $box-shadow;
+      background-color: $white;
+      border-radius: $border-radius-sm;
+      position: relative;
+      left: 15px;
+      z-index: 9;
+      transition: all 0.5s ease-in-out;
+      display: block;
+      overflow: hidden;
+    .name{
+      margin-bottom: 5px;
+      a {
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+    p{
+      margin-bottom: 0px;
+    }
+    }
+    .social-icon-round {
+      margin-top: 0;
+      transition: all 0.5s ease-in-out;      
+    }
+  }
+
+  .owl-carousel.teachers-shadow {
+    .owl-stage-outer {
+      padding-bottom: 10px;
+    }
+  }
+
+  /* Teachers style-02 */
+  .teachers-style-02{
+    text-align: center;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    .content{
+      padding: 15px;
+      .avtar {
+        margin-top: -70px;
+        margin-bottom: 20px;
+      img{
+        border-radius: $border-radius;
+        width: 100px;
+        height: 100px;
+        border: 2px solid $white;
+       }
+     }
+      .name{
+       margin-bottom: 5px;
+       &:hover {
+         a {
+           color: $primary;
+         }
+       }
+      }
+     span{
+      color: $primary;
+     }
+      p{
+        margin:15px 0 20px;
+      }
+    }
+  }
+
+/* Teachers style-03 */
+.teachers-style-03{  
+    padding-bottom: 0px;
+    border-radius: $border-radius-sm;
+    box-shadow: $box-shadow;
+    cursor: inherit;
+    img {
+      border-radius: 3px 3px 0px 0px;
+    }
+    .content{
+      text-align: left;
+      position: inherit;
+      margin: 0;
+      padding: 15px;
+      width: inherit;
+      left: inherit;
+      box-shadow: none;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 6px;
+        margin-bottom: 0;
+        li {
+          margin-right: 20px;          
+          a {
+            color: $gray-4;
+            &:hover {
+              color: $primary;
+            }
+          }
+          i {
+            font-size: 12px;
+            color: $primary;
+            margin-right: 8px;
+          }
+        }
+      }
+      .rating {
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 5px;
+        a {
+          color: $gray-3;
+          &:hover {
+            color: $primary;
+          }
+        }
+        span {
+          background-color: $warning;
+          color: $white;
+          padding: 2px 7px;
+          margin-right: 8px;
+          border-radius: $border-radius-sm;
+        }
+      }
+    }
+    &:hover {
+      box-shadow: $box-shadow-lg;
+    }
+}
+
+/* Teacher Details */
+
+.teacher-detail {
+  .btn-mes {
+    color: $gray-7;
+    border: 1px solid $gray-7;
+    &:hover {
+      color: $gray-8;
+      border-color: $gray-8;
+    }
+  }
+  .btn-fol {
+    color: $gray-8;
+    border: 1px solid $gray-8;
+    &:hover {
+      color: $gray-7;
+      border-color: $gray-7;
+    }
+  }
+}

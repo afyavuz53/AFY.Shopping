@@ -18,6 +18,18 @@ namespace Afy.Shopping.WebAPI.Controllers
         }
 
         /// <summary>
+        /// id ile tek ürün getir
+        /// </summary>
+        /// <param name="id">Ürün id'si</param>
+        /// <returns></returns>
+        [HttpGet("{id}", Name = "Get")]
+        [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<Product>> Get(string id)
+        {
+            return Ok(await _manager.Get(id));
+        }
+
+        /// <summary>
         /// Tüm ürünleri getir
         /// </summary>
         /// <returns></returns>

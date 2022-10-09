@@ -1,0 +1,103 @@
+﻿@model BasketVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--=================================
+   Inner Header -->
+<section class="inner-header bg-holder bg-overlay-black-90" style="background-image: url('images/bg/03.jpg');">
+    <div class="container">
+        <div class="row align-items-center position-relative">
+            <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                <h1 class="breadcrumb-title mb-0 text-white">Sepet</h1>
+            </div>
+            <div class="col-md-6">
+                <ol class="breadcrumb d-flex justify-content-center justify-content-md-end ms-auto">
+                    <li class="breadcrumb-item"><a href="/"><i class="fas fa-home me-1"></i>Home</a></li>
+                    <li class="breadcrumb-item active"><span>Sepet</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+Inner Header -->
+<!--=================================
+    Cart -->
+<section class="space-ptb bg-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <div class="cart-table">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="product-remove">&nbsp;</th>
+                                    <th class="product-thumbnail">&nbsp;</th>
+                                    <th class="product-name">Product</th>
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.Items != null)
+                                {
+                                    if (Model.Items.Count == 0)
+                                    {
+                                        <tr>
+                                            <td class="product-name text-center" colspan="6">Sepete Ürün Ekleyiniz.</td>
+                                        </tr>
+                                    }
+                                    foreach (CartItem item in Model.Items)
+                                    {
+                                        <tr>
+                                            <td class="product-remove"><a href="@Url.Action("DeleteCartItem","Basket",new {id=item.ProductId,returnUrl="Basket"})"><i class="far fa-trash-alt"></i></a></td>
+                                            <td class="product-thumbnail"><a href="#"><img src="images/shop/01.jpg" alt=""></a></td>
+                                            <td class="product-name"><a href="#">@item.ProductName</a></td>
+                                            <td class="product-price"><span class="amount">@item.Price</span></td>
+                                            <td class="product-quantity">
+                                                <div>
+                                                    <div class="form-group">
+                                                        <input type="number" class="form-control" id="number" value="@item.Quantity">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal"><span class="subtotal">₺@(item.Quantity * item.Price)</span></td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td class="product-name text-center" colspan="6">Sepete Ürün Ekleyiniz.</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="cart-totals">
+                    <h4 class="cart-totals-title">Cart totals</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr class="order-total">
+                                    <th>Total</th>
+                                    <td>
+                                        <span class="amount">₺@Model.TotalPrice</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+Cart -->

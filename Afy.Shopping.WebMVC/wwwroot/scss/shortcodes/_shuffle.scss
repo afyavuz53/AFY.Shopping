@@ -1,0 +1,84 @@
+/*****************************
+  Shuffle
+*****************************/
+.filters-group {
+  text-align: center;
+  .btn-filter {
+    background-color: transparent;
+    color: $gray-3;
+    padding: 9px 22px;
+    border: none;
+    font-weight: 500;
+    border-radius: $border-radius;
+    transition: all 0.3s ease-in-out;
+  }
+  .btn-filter.active {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.my-shuffle-container{
+  margin-left: -12px;
+  margin-right: -12px;
+  .grid-item {
+    padding: 12px;
+  }
+}
+
+.my-shuffle-container.grid-3 {
+  .grid-item {
+    width: 33.3333%;
+  }
+}
+
+.my-shuffle-container.grid-4 {
+  .grid-item {
+    width: 25%;
+  }
+}
+
+/*****************************
+  Responsive
+*****************************/
+
+@media (max-width:1199px) {
+  .my-shuffle-container.grid-4 {
+    .grid-item {
+      width: 33.3333%;
+    }
+  }
+
+}
+
+@media (max-width:767px) {
+
+  .my-shuffle-container.grid-3 {
+    .grid-item {
+      width: 50%;
+    }
+  }
+
+  .my-shuffle-container.grid-4 {
+    .grid-item {
+      width: 50%;
+    }
+  }
+
+}
+
+@media (max-width:575px) {
+
+  .my-shuffle-container.grid-3 {
+    .grid-item {
+      width: 100%;
+    }
+  }
+
+  .my-shuffle-container.grid-4 {
+    .grid-item {
+      width: 100%;
+    }
+  }
+
+}

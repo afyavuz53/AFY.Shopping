@@ -1,0 +1,31 @@
+﻿@model BasketVM
+<li class="cart dropdown">
+    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="cart-icon"><i class="fas fa-shopping-cart"></i></span></button>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <ul class="cart-list ps-0">
+            @if (Model.Items != null)
+            {
+                foreach (CartItem item in Model.Items)
+                {
+                    <li class="d-flex">
+                        <a class="remove-item" href="@Url.Action("DeleteCartItem","Basket",new {id=item.ProductId})"><i class="fas fa-times text-danger"></i></a>
+                        <img class="img-fluid me-3" src="images/shop/01.jpg" alt="">
+                        <div class="cart-info">
+                            <a href="#">@item.ProductName</a>
+                            <span class="d-block">@item.Quantity x @item.Price</span>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        <div class="cart-footer">
+            <div class="d-flex mb-3">
+                <b class="me-auto text-dark">Subtotal:</b>
+                <span>₺@Model.TotalPrice</span>
+            </div>
+            <div class="d-inline-block d-sm-flex">
+                <a class="btn btn-sm btn-primary text-white me-2 px-4" asp-controller="Basket" asp-action="Index">View cart</a>
+            </div>
+        </div>
+    </div>
+</li>

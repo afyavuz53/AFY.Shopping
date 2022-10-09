@@ -1,0 +1,366 @@
+/*****************************
+  Banner
+*****************************/
+
+/* Banner 01 */
+
+/* slide 01 */
+.slider-01 {
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 117px;
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, $gray-9 0%, rgba(0,0,0,0) 100%);
+        z-index: 2;
+    }
+	.swiper-slide {
+		height: 840px;
+	}
+}
+
+/* Banner 02 */
+.banner-04 {
+     height: 803px;
+     display: flex;
+    .content{
+        h2{
+            font-size: 54px;
+            line-height: 60px;
+        }
+    }
+
+    .banner-shep{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    figure {
+        position: absolute;
+        top: -2px;
+        right: 0px;
+        height: 100%;
+        width: 1109px;
+    }
+    .form-inline {
+        .form-control {
+            padding-right: 98px;
+            &:focus {
+                border-color: $gray-7;
+            }
+        }
+        .btn-dark {
+            &:hover {
+                background-color: $gray-7;
+                border-color: $gray-7;
+            }
+        }
+    }
+}
+
+/* Banner 03 */
+.banner-05 {
+ height: 840px;
+ position: relative;
+ .content{
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    h1{
+        font-size: 54px;
+        line-height: 64px;
+    }
+  }
+}
+
+/* Bullet */
+.swiper-pagination {
+	.swiper-pagination-bullet {
+		background-color: $gray-2;
+		width: 88px;
+		height: 5px;
+		border-radius: 0;
+        opacity: 1;
+        outline: none;
+	}
+	.swiper-pagination-bullet-active {
+		background-color: $primary;
+	}
+}
+.swiper-pagination.swiper-pagination-left {
+	text-align: left;
+	margin: 0 auto;
+	right: 0;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+/* Arrow */
+.swiper-button-next {
+	right: 53px;
+    background-image: inherit !important;
+    outline: none;
+    width: 50px;
+    height: 50px;
+	i {
+		font-size: 20px;
+		color: rgba($white,0.5);
+		background-color: rgba($black,0.2);
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+        text-align: center;
+        outline: none;
+		border-radius: $border-radius;
+		transition: all 0.3s ease-in-out;
+	}
+	&:hover {
+		i {
+			color: $white;
+			background-color: rgba($black,0.5);
+		}
+	}
+}
+.swiper-button-prev {
+    left: 53px;
+    background-image: inherit !important;
+    outline: none;
+    width: 50px;
+    height: 50px;
+	i {
+		font-size: 20px;
+		color: rgba($white,0.5);
+		background-color: rgba($black,0.2);
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+        text-align: center;
+        outline: none;
+		border-radius: $border-radius;
+		transition: all 0.3s ease-in-out;
+	}
+	&:hover {
+		i {
+			color: $white;
+			background-color: rgba($black,0.5);
+		}
+	}
+}
+
+/*****************************
+  Responsive
+*****************************/
+
+@media (min-width: 576px) {
+    .swiper-pagination.swiper-pagination-left {
+        max-width: 510px;
+    }
+}
+
+@media (min-width: 768px) {
+    .swiper-pagination.swiper-pagination-left {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .swiper-pagination.swiper-pagination-left {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .swiper-pagination.swiper-pagination-left {
+        max-width: 1270px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .banner-04 {
+        height: 679px;
+        figure {
+            width: 939px;
+        }
+    }
+}
+
+@media (max-width: 1366px) {
+    .banner-04 {
+        .content
+            h2 {
+                font-size: 40px;
+                line-height: 50px;
+            }
+    }
+
+   .banner-05 {
+       height: 650px;
+    }
+}
+
+@media (max-width: 1199px) {
+    /* Home 01 */
+    .slider-01 .swiper-slide {
+        height: 491px;
+    }
+
+    /* Home 02 */
+    .slider-02 {
+        .swiper-slide {
+            height: 550px;
+        }
+        .slide-01 {
+            .guruma-rate {
+                bottom: 25px;
+                left: -40%;
+            }
+        }
+    }
+
+    /* Home 04 */
+    .banner-04 {
+        height: 580px;
+        .content {
+            h2 {
+                font-size: 36px;
+                line-height: 46px;
+            }
+        }
+        figure {
+            width: 802px;
+        }
+    }
+
+    /* Home 05 */
+    .banner-05 {
+       height: 600px;
+       .content {
+         h1{
+            font-size: 40px;
+            line-height: 56px;
+         }
+       }
+    }
+
+}
+
+@media (max-width: 991px) {
+    /* Home 01 */
+    .slider-01 {
+
+    }
+
+    /* Home 02 */
+    .slider-02 {
+        .swiper-slide {
+            height: 420px;
+        }
+        .slide-01 {
+            .guruma-rate {
+                display: none;
+            }
+        }
+    }
+
+    /* Home 03 */
+    .slider-03 .swiper-slide{
+        height: 600px;
+   }
+
+    /* Home 04 */
+    .banner-04 {
+        height: 540px;
+        figure {
+            width: 624px;
+            top: 87px;
+        }
+    }
+
+
+    /* Home 05 */
+    .banner-05 {
+       height: 500px;
+       .content {
+         h1{
+            font-size: 36px;
+            line-height: 46px;
+         }
+       }
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    /* Home 02 */
+    .slider-02 {
+        .slide-02 {
+            background-position: right 0;
+        }
+    }
+
+    /* Home 03 */
+    .slider-03 {
+        .swiper-slide {
+            height: 420px;
+        }
+        .banner-content {
+            img {
+                display: none;
+            }
+        }
+    }
+
+   .swiper-pagination .swiper-pagination-bullet {
+        width: 50px;
+    }
+	.swiper-button-next,
+    .swiper-button-prev{
+      display: none;
+    }
+
+    .swiper-pagination.swiper-pagination-left {
+        padding-left: 30px;
+    }
+
+    /* Home 04 */
+    .banner-04 {
+        height: 400px;
+        .content {
+            margin-top: 70px;
+            h2 {
+                font-size: 26px;
+                line-height: 36px;
+            }
+        }
+        figure {
+            display: none;
+        }
+    }
+
+
+
+}
+
+@media (max-width: 575px) {
+
+     /* Home 05 */
+    .banner-05 {
+       height: 480px;
+       .content {
+            top: 100px;
+         h1{
+            font-size: 30px;
+            line-height: 40px;
+         }
+       }
+    }
+
+}

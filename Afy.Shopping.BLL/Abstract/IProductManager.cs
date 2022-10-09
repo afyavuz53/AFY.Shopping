@@ -10,6 +10,7 @@ namespace Afy.Shopping.BLL.Abstract
 {
     public interface IProductManager
     {
+        Task<Product?> Get(string id);
         Task<ICollection<Product>> GetAll(Expression<Func<Product, bool>> filter = null!);
     }
 }

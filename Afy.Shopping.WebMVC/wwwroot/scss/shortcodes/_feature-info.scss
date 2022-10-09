@@ -1,0 +1,99 @@
+/*****************************
+  Feature Info
+*****************************/
+
+ /* Feature Info */
+ .feature-info {
+   .feature-info-icon {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130px;
+        height: 130px;
+      }
+      img {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        transform: translate(58%, 50%);
+      }
+   }
+ }
+
+/* Feature Info 02 */
+.feature-info-02 {
+  [class^='col-'] {
+    border-right: 1px solid rgba($gray-1, 0.23);
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+/* Feature Info 03 */
+.feature-info-03 {
+  [class^='col-'] {
+    border-right: 1px solid $border-color;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+/* Feature Info 04 */
+.feature-info-04 {
+  background-color: $gray-1;
+  padding: 40px 30px;
+  border-radius: $border-radius-sm;  
+  transition: all 0.3s ease-in-out;
+  .feature-icon {
+    color: $primary;
+    transition: all 0.3s ease-in-out;
+  }
+  .feature-title{
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    background-color: $primary;
+    color: $white;
+    .feature-icon {
+      color: $white;
+    }
+    .feature-title {
+      color: $white;
+    }
+    .btn-link {
+      color: $white;
+      &:hover {
+        color: $gray-7;
+      }
+    }
+  }
+}
+
+/* Feature Step */
+ .feature-step {
+   .feature-step-icon {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        color: $white;
+      }
+      img {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translate(69%, -50%);
+      }
+   }
+ }

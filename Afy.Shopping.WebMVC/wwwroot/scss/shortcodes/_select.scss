@@ -1,0 +1,144 @@
+/*****************************
+	Select Dropdown
+*****************************/
+.select2-container {
+	.select2-selection--single {
+		height: auto;
+		outline: none;
+
+		.select2-selection__rendered {
+			padding-left: 0px;
+		}
+
+	}
+	width: 100% !important;
+}
+
+.select2-container--default {
+	.select2-selection--single {
+		border-radius: 0px;
+		border: none;
+
+		.select2-selection__rendered {
+			color: $gray-3;
+			line-height: inherit;
+		}
+
+	}
+
+	.select2-results__option--highlighted[aria-selected] {
+		padding: 8px 15px;
+	}
+
+}
+
+.bigdrop {
+	min-width: 196px !important;
+}
+
+.select2-results__options {
+	padding: 8px 2px;
+}
+
+/* Select Dropdown Arrow */
+.select2-container--default {
+	.select2-selection--single {
+		.select2-selection__arrow {
+			top: 1px;
+			right: 0px;
+			height: 21px;
+			width: 14px;
+
+			b {
+				border: none;
+			}
+
+			&:before {
+				content: "\f078";
+				font-family: "Font Awesome 5 Free";
+				font-style: normal;
+				font-weight: 700;
+				color: $primary;
+				font-size: 14px;
+			}
+
+		}
+
+	}
+
+	.select2-search--dropdown {
+		padding: 0;
+
+		.select2-search__field {
+			border: 1px solid $border-color;
+		}
+
+	}
+
+	.select2-results__option {
+		padding: 8px 15px;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.select2-results__option[aria-selected=true] {
+		background-color: $gray-1;
+	}
+
+	.select2-results__option--highlighted[aria-selected] {
+		background: rgba($primary, 0.1);
+		color: $primary;
+	}
+
+}
+
+.select2-dropdown {
+	border: none;
+	border-radius: 0px;
+	z-index: 9;
+}
+
+.select-border {
+	.select2-container--default {
+		.select2-selection--single {
+			border: 1px solid $border-color;
+			height: 55px;
+			line-height: 26px;
+			padding: 14px 20px;
+
+			.select2-selection__arrow {
+				top: 16px;
+				right: 20px;
+			}
+
+		}
+
+	}
+
+}
+
+.select2-container--default {
+	.select2-results {
+		>.select2-results__options {
+			border: none;
+		}
+
+	}
+
+}
+
+.select2-container--open {
+	.select2-dropdown {
+		background: $gray-1;
+		padding: 15px;
+		border: 1px solid $border-color;
+	}
+
+}
+
+.select2-search--dropdown {
+	.select2-search__field {
+		border: 1px solid $border-color;
+		box-shadow: 0px 2px 5px rgba($black, 0.04);
+	}
+
+}

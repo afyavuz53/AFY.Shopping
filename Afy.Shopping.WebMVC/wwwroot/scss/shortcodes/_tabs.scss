@@ -1,0 +1,45 @@
+	/*****************************
+	Tab style
+*****************************/
+
+/* Tab */
+.nav-tabs {
+  	border: none;
+		.nav-link {
+	    padding: 9px 20px;
+	    border-radius: $border-radius;
+	    transition: all 0.3s ease-in-out;
+	    color: $gray-3;
+
+		&:focus {
+			background: $primary;
+			color: $white;
+		}
+
+		&:hover {
+			background: $primary;
+			color: $white;
+		}
+
+	}
+
+	.nav-item.show {
+		.nav-link {
+			color: $white;
+	  	background: $primary;
+		}
+
+	}
+	.nav-link.active {
+		color: $white;
+		background: $primary;
+	}
+
+	.nav-item {
+		.nav-link {
+			border: none;
+		}
+	}
+
+}
+

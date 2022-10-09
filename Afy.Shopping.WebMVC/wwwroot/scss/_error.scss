@@ -1,0 +1,41 @@
+/*****************************
+  Not Found
+*****************************/
+
+.error-404{
+	h1{
+	   font-size: 200px;
+	   line-height: 1;
+	   color: $primary;
+	   margin-bottom: 10px;
+	}
+    h4{
+    	font-size: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width:767px) {
+
+	.error-404 {
+		h1 {
+			font-size: 120px;
+			line-height: 1;
+		}
+		h4 {
+			font-size: 24px;
+			line-height: 36px;
+		}
+	}
+
+}
+
+@media (max-width:575px) {
+
+	/* Error 404 */
+	.error-404 h1{
+		font-size: 80px;
+		line-height: 1;
+	 }
+
+}

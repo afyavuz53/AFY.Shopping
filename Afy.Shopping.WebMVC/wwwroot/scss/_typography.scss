@@ -1,0 +1,300 @@
+/*****************************
+  Typography
+*****************************/
+
+body {
+	font-family: $font-base;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: $body-color;
+	overflow-x: hidden;
+}
+
+a {
+	outline: medium none !important;
+	color: $primary;
+	transition: all 0.3s ease-in-out;
+	text-decoration: none;
+	&:focus {
+		color: $gray-7;
+		text-decoration: none !important;
+	}
+	&:hover {
+		color: $gray-7;
+		text-decoration: none !important;
+	}
+}
+
+i {
+	line-height: 1;
+}
+
+hr {
+	border-color: $border-color !important;
+}
+
+input {
+	outline: medium none !important;
+	color: $primary;
+}
+
+.h1, h1,
+.h2, h2,
+.h3, h3,
+.h4, h4,
+.h5, h5,
+.h6, h6 {
+	font-family: $font-hedding;
+	font-weight: 600;
+	color: $gray-7;
+	margin-top: 0px;
+	letter-spacing: -1px;
+	a {
+		color: inherit;
+	}
+}
+
+label {
+	font-weight: normal;
+}
+
+.h1,
+h1 {
+	font-size: 72px;
+	line-height: 82px;
+}
+
+.h2,
+h2 {
+	font-size: 36px;
+	line-height: 46px;
+}
+
+.h3,
+h3 {
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.h4,
+h4 {
+	font-size: 24px;
+	line-height: 34px;
+}
+
+.h5,
+h5 {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.h6,
+h6 {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.lead {
+	font-size: 16px !important;
+	line-height: 26px;
+}
+
+small,
+.small {
+	font-size: 12px;
+	font-weight: 500;
+}
+
+*::-moz-selection {
+	background: $primary;
+	color: $white;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: $primary;
+	color: $white;
+	text-shadow: none;
+}
+
+::selection {
+	background: $primary;
+	color: $white;
+	text-shadow: none;
+}
+
+/* Flaticon */
+[class^="flaticon-"]:before, 
+[class*=" flaticon-"]:before, 
+[class^="flaticon-"]:after, 
+[class*=" flaticon-"]:after {
+	margin-left: 0;
+	font-size: inherit;
+}
+
+/* Inner header */
+.inner-header {
+	padding: 60px 0;
+	.breadcrumb {
+		background: transparent;
+		margin-bottom: 0;
+		padding: 0;
+		.breadcrumb-item {
+			font-size: 13px;
+			font-weight: 600;
+			padding-left: 10px;
+			a {
+				color: $primary;
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+		.breadcrumb-item.active {
+			color: $white;
+		}
+		.breadcrumb-item+.breadcrumb-item {
+			&:before {
+				content: "\f105";
+				font-family: "Font Awesome 5 free";
+				padding-right: 10px;
+				color: $white;
+			}
+		}
+	}
+	.breadcrumb-title {
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 50px;
+	}	
+}
+
+/*****************************
+  Responsive
+*****************************/
+
+@media (max-width:991px) {
+	.h1,
+	h1 {
+		font-size: 42px;
+		line-height: 52px;
+	}
+
+	.h2,
+	h2 {
+		font-size: 34px;
+		line-height: 44px;
+	}
+
+	.h3,
+	h3 {
+		font-size: 32px;
+		line-height: 42px;
+	}
+
+	.h4,
+	h4 {
+		font-size: 24px;
+		line-height: 34px;
+	}
+
+	.h5,
+	h5 {
+		font-size: 22px;
+		line-height: 32px;
+	}
+
+	/* Inner header */
+	.inner-header {
+		padding: 140px 0;
+		.breadcrumb-title {
+			font-size: 50px;
+		}
+	}
+
+}
+
+@media (max-width:767px) {
+
+	.h1,
+	h1 {
+		font-size: 32px;
+		line-height: 42px;
+	}
+
+	.h2,
+	h2 {
+		font-size: 28px;
+		line-height: 38px;
+	}
+
+	.h3,
+	h3 {
+		font-size: 26px;
+		line-height: 36px;
+	}
+
+	.h4,
+	h4 {
+		font-size: 22px;
+		line-height: 32px;
+	}
+
+	.h5,
+	h5 {
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.h6,
+	h6 {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	/* Inner header */
+	.inner-header {
+		padding: 100px 0;
+		.breadcrumb-title {
+			font-size: 40px;
+		}
+	}
+
+
+}
+
+@media (max-width:575px) {
+
+	.h1,
+	h1 {
+		font-size: 30px;
+		line-height: 40px;
+	}
+
+	.h2,
+	h2 {
+		font-size: 26px;
+		line-height: 36px;
+	}
+
+	.h3,
+	h3 {
+		font-size: 24px;
+		line-height: 34px;
+	}
+
+	/* Inner header */
+	.inner-header {
+		padding: 50px 0;
+		.breadcrumb {
+			margin: 0 auto;
+			text-align: center;
+		}
+		.breadcrumb-title {
+			font-size: 30px;
+		}
+	}
+	
+}

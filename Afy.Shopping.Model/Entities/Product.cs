@@ -9,6 +9,6 @@ namespace Afy.Shopping.Model.Entities
     public class Product : BaseEntity
     {
         public string? title { get; set; }
-        public double price { get; set; }
+        public decimal price { get; set; }
     }
 }

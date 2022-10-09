@@ -1,0 +1,61 @@
+/*****************************
+  Gallery
+*****************************/
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+    .gallery-overlay {
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      align-items: flex-end;
+      transition: all 0.5s ease;
+        .gallery-description{
+         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .gallery-icon{
+          position: relative;
+          width: 40px;
+          height: 40px;
+          transition: all 0.5s ease;
+          &:before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: $gray-7;
+            border-radius: $border-radius;
+            transition: all 0.5s ease;
+          }
+          i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            z-index: 9;
+            font-size: 14px;
+           color: $gray-8;
+          transition: all 0.5s ease;
+          }
+        }
+      }
+    }
+     &:hover{
+    .gallery-overlay{
+      opacity: 1;
+      background: rgba($primary,0.5);
+    }
+  }
+}
