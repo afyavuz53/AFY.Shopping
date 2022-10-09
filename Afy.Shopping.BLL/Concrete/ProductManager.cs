@@ -15,7 +15,7 @@ namespace Afy.Shopping.BLL.Concrete
         IProductService _service;
         public ProductManager(IProductService productService)
         {
-            _service = productService;
+            _service = productService ?? throw new ArgumentNullException(nameof(productService));
         }
         public Task<ICollection<Product>> GetAll(Expression<Func<Product, bool>> filter = null!)
         {

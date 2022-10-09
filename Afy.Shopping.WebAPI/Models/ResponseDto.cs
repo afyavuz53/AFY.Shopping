@@ -3,7 +3,7 @@
     /// <summary>
     /// Cevap
     /// </summary>
-    public class ResponseDto
+    public class ResponseDto<T>
     {
         /// <summary>
         /// Cevap durumu
@@ -29,6 +29,9 @@
         /// Toplam sayfa sayısı
         /// </summary>
         public int totalPage { get; set; }
-        public List<object> items { get; set; }=new List<object> { };
+        /// <summary>
+        /// Ürünler
+        /// </summary>
+        public List<T> items { get; set; } = new List<T> { };
     }
 }

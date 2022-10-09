@@ -1,6 +1,6 @@
 using Afy.Shopping.BLL;
+using Afy.Shopping.Core;
 using Afy.Shopping.Model.Settings;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -27,9 +27,9 @@ builder.Services.AddSwaggerGen(c =>
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
-builder.Services.Configure<ShoppingDatabaseSettings>(
-    builder.Configuration.GetSection("ShoppingDatabaseSettings"));
-builder.Services.AddBusinessLogicLayer();
+builder.Services.Configure<ShoppingDatabaseSettings>(builder.Configuration.GetSection(nameof(ShoppingDatabaseSettings)));
+builder.Services.AddBusinessLogicLayer(builder.Configuration);
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 

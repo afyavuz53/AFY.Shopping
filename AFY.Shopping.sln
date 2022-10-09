@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afy.Shopping.DAL", "Afy.Shopping.DAL\Afy.Shopping.DAL.csproj", "{75F07117-958A-43C9-919B-92307C590906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afy.Shopping.DAL", "Afy.Shopping.DAL\Afy.Shopping.DAL.csproj", "{75F07117-958A-43C9-919B-92307C590906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afy.Shopping.Model", "Afy.Shopping.Model\Afy.Shopping.Model.csproj", "{B644385A-27B5-48C9-86A5-12BEB57330AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afy.Shopping.Model", "Afy.Shopping.Model\Afy.Shopping.Model.csproj", "{B644385A-27B5-48C9-86A5-12BEB57330AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afy.Shopping.BLL", "Afy.Shopping.BLL\Afy.Shopping.BLL.csproj", "{4D2B13F7-A606-45DE-8940-FB75F424AE42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afy.Shopping.BLL", "Afy.Shopping.BLL\Afy.Shopping.BLL.csproj", "{4D2B13F7-A606-45DE-8940-FB75F424AE42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afy.Shopping.WebAPI", "Afy.Shopping.WebAPI\Afy.Shopping.WebAPI.csproj", "{211EA4AF-F2ED-4C07-A5CA-6980DD9BCC8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afy.Shopping.WebAPI", "Afy.Shopping.WebAPI\Afy.Shopping.WebAPI.csproj", "{211EA4AF-F2ED-4C07-A5CA-6980DD9BCC8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afy.Shopping.Core", "Afy.Shopping.Core\Afy.Shopping.Core.csproj", "{0072135E-23BC-4C49-B729-A90F510E585F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{211EA4AF-F2ED-4C07-A5CA-6980DD9BCC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{211EA4AF-F2ED-4C07-A5CA-6980DD9BCC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{211EA4AF-F2ED-4C07-A5CA-6980DD9BCC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0072135E-23BC-4C49-B729-A90F510E585F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0072135E-23BC-4C49-B729-A90F510E585F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0072135E-23BC-4C49-B729-A90F510E585F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0072135E-23BC-4C49-B729-A90F510E585F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

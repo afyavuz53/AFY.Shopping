@@ -1,7 +1,9 @@
 ﻿using Afy.Shopping.BLL.Abstract;
 using Afy.Shopping.Model.Entities;
+using Afy.Shopping.Model.Entities.Basket;
 using Afy.Shopping.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace Afy.Shopping.WebAPI.Controllers
 {
@@ -12,20 +14,22 @@ namespace Afy.Shopping.WebAPI.Controllers
         readonly IProductManager _manager;
         public ProductController(IProductManager productManager)
         {
-            _manager = productManager;
+            _manager = productManager ?? throw new ArgumentNullException(nameof(productManager));
         }
 
         /// <summary>
         /// Tüm ürünleri getir
         /// </summary>
-        /// <returns>Tüm ürünler</returns>
+        /// <returns></returns>
         /// <response code="200">Başarılı</response> 
+        /// <response code="404">Başarısız</response> 
         [HttpGet(Name = "GetAll")]
-        public async Task<JsonResult> GetAll()
+        [ProducesResponseType(typeof(ResponseDto<Product>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<ResponseDto<Product>>> GetAll()
         {
             try
             {
-                ResponseDto response = new();
+                ResponseDto<Product> response = new();
                 ICollection<Product> products = await _manager.GetAll();
                 int count = products.Count;
                 if (count > 0)
@@ -42,11 +46,11 @@ namespace Afy.Shopping.WebAPI.Controllers
                     response.status = false;
                     response.message = "Katalogda ürün bulunmamaktadır.";
                 }
-                return Json(response);
+                return Ok(response);
             }
             catch (Exception ex)
             {
-                return Json(new ResponseDto() { status = false, message = ex.Message });
+                return NotFound(new ResponseDto<Product>() { status = false, message = ex.Message });
             }
         }
 
@@ -64,14 +68,14 @@ namespace Afy.Shopping.WebAPI.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <returns></returns>
+        /// <returns>Ürün listesi</returns>
         /// <response code="200">Başarılı</response>
         [HttpPost(Name = "GetAll")]
-        public async Task<JsonResult> GetAll([FromBody] RequestDto request)
+        public async Task<ActionResult<ResponseDto<Product>>> GetAll([FromBody] RequestDto request)
         {
             try
             {
-                ResponseDto response = new();
+                ResponseDto<Product> response = new();
                 if (request.page < 1)
                 {
                     response.status = false;
@@ -101,11 +105,11 @@ namespace Afy.Shopping.WebAPI.Controllers
                         response.message = "Katalokta ürün bulunmamaktadır.";
                     }
                 }
-                return Json(response);
+                return Ok(response);
             }
             catch (Exception ex)
             {
-                return Json(new ResponseDto() { status = false, message = ex.Message });
+                return NotFound(new ResponseDto<Product>() { status = false, message = ex.Message });
             }
         }
     }

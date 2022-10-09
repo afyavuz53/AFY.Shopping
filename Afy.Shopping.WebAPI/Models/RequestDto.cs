@@ -1,7 +1,7 @@
 ﻿namespace Afy.Shopping.WebAPI.Models
 {
     ///<summary>
-    ///İstek model
+    ///İstek
     ///</summary>
     public class RequestDto
     {
