@@ -8,17 +8,24 @@ namespace Afy.Shopping.WebMVC.Controllers
     [Authorize]
     public class BasketController : Controller
     {
+        IConfiguration _config;
+        string apiLink;
+        public BasketController(IConfiguration configuration)
+        {
+            _config = configuration;
+            apiLink = _config.GetValue<string>("APILink");
+        }
         public IActionResult Index()
         {
             string? username = HttpContext.User.Identity?.Name;
-            BasketVM response = ApiJsonHelper.GetEntity<BasketVM>($"http://localhost:5050/api/v1/basket/getbasket/{username}") ?? null!;
+            BasketVM response = ApiJsonHelper.GetEntity<BasketVM>($"{apiLink}basket/getbasket/{username}") ?? null!;
             return View(response);
         }
 
         public IActionResult AddCart(string id)
         {
             string? username = HttpContext.User.Identity?.Name;
-            BasketVM response = ApiJsonHelper.GetEntity<BasketVM>($"http://localhost:5050/api/v1/basket/getbasket/{username}") ?? null!;
+            BasketVM response = ApiJsonHelper.GetEntity<BasketVM>($"{apiLink}basket/getbasket/{username}") ?? null!;
             if (response != null && response.Items != null && response.Items.Count > 0)
             {
                 if (response.Items.Any(x => x.ProductId == id))
@@ -28,7 +35,7 @@ namespace Afy.Shopping.WebMVC.Controllers
                 }
                 else
                 {
-                    ProductVM product = ApiJsonHelper.GetEntity<ProductVM>($"http://localhost:5050/api/v1/product/Get/{id}") ?? null!;
+                    ProductVM product = ApiJsonHelper.GetEntity<ProductVM>($"{apiLink}product/Get/{id}") ?? null!;
                     response.Items.Add(new CartItem()
                     {
                         Price = product.price,
@@ -40,7 +47,7 @@ namespace Afy.Shopping.WebMVC.Controllers
             }
             else
             {
-                ProductVM product = ApiJsonHelper.GetEntity<ProductVM>($"http://localhost:5050/api/v1/product/Get/{id}") ?? null!;
+                ProductVM product = ApiJsonHelper.GetEntity<ProductVM>($"{apiLink}product/Get/{id}") ?? null!;
                 response = new()
                 {
                     UserName = username
@@ -54,14 +61,14 @@ namespace Afy.Shopping.WebMVC.Controllers
                     Quantity = 1
                 });
             }
-            BasketVM? postResponse = ApiJsonHelper.PostEntity<BasketVM, BasketVM>("http://localhost:5050/api/v1/basket/UpdateBasket", response);
+            BasketVM? postResponse = ApiJsonHelper.PostEntity<BasketVM, BasketVM>($"{apiLink}basket/UpdateBasket", response);
             return RedirectToAction("Index", "Product");
         }
 
         public IActionResult DeleteCartItem(string id, string returnUrl = "Product")
         {
             string? username = HttpContext.User.Identity?.Name;
-            BasketVM response = ApiJsonHelper.GetEntity<BasketVM>($"http://localhost:5050/api/v1/basket/getbasket/{username}") ?? null!;
+            BasketVM response = ApiJsonHelper.GetEntity<BasketVM>($"{apiLink}basket/getbasket/{username}") ?? null!;
             if (response != null && response.Items != null && response.Items.Count > 0)
             {
                 if (response.Items.Any(x => x.ProductId == id))
@@ -70,11 +77,11 @@ namespace Afy.Shopping.WebMVC.Controllers
                     response.Items.Remove(cartItem);
                     if (response.Items.Count > 0)
                     {
-                        BasketVM? postResponse = ApiJsonHelper.PostEntity<BasketVM, BasketVM>("http://localhost:5050/api/v1/basket/UpdateBasket", response);
+                        BasketVM? postResponse = ApiJsonHelper.PostEntity<BasketVM, BasketVM>(apiLink + "basket/UpdateBasket", response);
                     }
                     else
                     {
-                        ApiJsonHelper.DeleteEntity($"http://localhost:5050/api/v1/basket/DeleteBasket/{username}");
+                        ApiJsonHelper.DeleteEntity($"{apiLink}basket/DeleteBasket/{username}");
                     }
                 }
             }

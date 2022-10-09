@@ -7,6 +7,13 @@ namespace Afy.Shopping.WebMVC.ViewComponents.Basket
 {
     public class BasketViewComponent : ViewComponent
     {
+        IConfiguration _config;
+        string apiLink;
+        public BasketViewComponent(IConfiguration configuration)
+        {
+            _config = configuration;
+            apiLink = _config.GetValue<string>("APILink");
+        }
         public ViewViewComponentResult Invoke()
         {
             if (HttpContext.User.Identity?.IsAuthenticated ?? false)

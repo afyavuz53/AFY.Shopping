@@ -8,9 +8,16 @@ namespace Afy.Shopping.WebMVC.Controllers
     [Authorize]
     public class ProductController : Controller
     {
+        IConfiguration _config;
+        string apiLink;
+        public ProductController(IConfiguration configuration)
+        {
+            _config = configuration;
+            apiLink = _config.GetValue<string>("APILink");
+        }
         public IActionResult Index()
         {
-            ResponseAPIDto<ProductVM> response = ApiJsonHelper.GetEntity<ResponseAPIDto<ProductVM>>("http://localhost:5050/api/v1/product/getall") ?? null!;
+            ResponseAPIDto<ProductVM> response = ApiJsonHelper.GetEntity<ResponseAPIDto<ProductVM>>(apiLink + "product/getall") ?? null!;
             return View(response.items);
         }
     }
