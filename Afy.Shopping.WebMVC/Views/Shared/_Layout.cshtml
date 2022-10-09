@@ -19,10 +19,10 @@
                     <i class="fas fa-align-left"></i>
                 </button>
                 <a class="navbar-brand" href="index.html">
-                    <img class="img-fluid" src="img/logo.webp" alt="logo">
+                    <img class="img-fluid" src="~/images/logo.webp" alt="logo">
                 </a>
                 <a class="navbar-brand navbar-brand-sticky" href="index.html">
-                    <img class="img-fluid" src="img/logo.webp" alt="logo">
+                    <img class="img-fluid" src="~/images/logo.webp" alt="logo">
                 </a>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -42,6 +42,30 @@
     <!--=================================
       Header -->
     @RenderBody()
+    <footer class="footer ">
+        <div class="footer-bottom bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="social-icon text-md-start text-center mb-3 mb-md-0">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="copyright text-md-end text-center">
+                            <p class="mb-0 small">2022 Development by <a href="https://www.linkedin.com/in/ahmet-fehmi-yavuz" target="_blank">Ahmet Fehmi Yavuz</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <partial name="_ValidationScriptsPartial.cshtml" />
     @await RenderSectionAsync("Scripts", required: false)
 </body>
